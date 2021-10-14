@@ -19,16 +19,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@800&family=Poppins:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@800&family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="style.css" />
 
     <title>Edie Homepage</title>
   </head>
   <body>
-    <header class="mobile-header">
+    <header class="mobile-header container">
       <div class="mobile-navbar">
-        <a href="/" class="mobile-logo">Edie</a>
+        <a href="/" class="logo">Edie</a>
         <button
           class="menu-toggle"
           id="menu-toggle-btn"
@@ -56,21 +58,48 @@
           </svg>
         </button>
       </div>
+      <div id="sidenav" class="sidenav">
+        <div class="sidenav-top">
+          <a href="/" class="logo">Edie</a>
+          <button
+            class="menu-toggle"
+            id="menu-toggle-btn"
+            aria-expanded="false"
+            aria-label="Icon-only Button"
+            onclick="closeNav()"
+          >
+            <span class="screen-reader-text">Close</span>
+            <svg
+              class="icon icon-close"
+              aria-hidden="true"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav id="sidenav-menu" class="sidenav-menu" aria-label="Sidenav menu">
+          <ul class="sidenav-menu-list">
+            <li class="sidenav-menu-item"><a href="#">Home</a></li>
+            <li class="sidenav-menu-item"><a href="#">Services</a></li>
+            <li class="sidenav-menu-item"><a href="#">Our Works</a></li>
+            <li class="sidenav-menu-item"><a href="#">Clients</a></li>
+            <li class="sidenav-menu-item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <div class="sidenav">
-      <nav id="sidenav-menu" class="sidenav-menu" aria-label="Sidenav menu">
-        <ul class="sidenav-menu-list">
-          <li class="sidenav-menu-item"><a href="#">Home</a></li>
-          <li class="sidenav-menu-item"><a href="#">Services</a></li>
-          <li class="sidenav-menu-item"><a href="#">Our Works</a></li>
-          <li class="sidenav-menu-item"><a href="#">Clients</a></li>
-          <li class="sidenav-menu-item"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <header class="desktop-header">
+    <header class="desktop-header container">
       <div class="desktop-navbar">
-        <a href="/" class="desktop-logo">Edie</a>
+        <a href="/" class="logo">Edie</a>
         <nav id="desktop-menu" class="desktop-menu" aria-label="Desktop menu">
           <ul class="desktop-menu-list">
             <li class="desktop-menu-item"><a href="#">Home</a></li>
@@ -82,7 +111,7 @@
         </nav>
       </div>
     </header>
-    <section class="hero">
+    <section class="hero container">
       <div class="main-title">
         <p>Unhappy with your website?</p>
         <h1>We create beautiful and fast web services</h1>
@@ -101,23 +130,26 @@
           <label for="subscribe" style="display: block"
             >Want us to contact you?</label
           >
-          <input
-            type="subscribe"
-            name="subscribe"
-            id="subscribe_1"
-            class="subscribe-form"
-          />
-          <button type="submit">
-            <span class="visuallyhidden">Please</span>Join
-          </button>
+          <form action="submit">
+            <input
+              type="subscribe"
+              name="subscribe"
+              id="subscribe_1"
+              class="subscribe-form"
+              placeholder="Email"
+            />
+            <button type="submit">
+              <span class="visuallyhidden">Please</span>Join
+            </button>
+          </form>
         </div>
       </div>
     </section>
-    <section class="services">
+    <section class="services container">
       <h2>We offer high demand services</h2>
       <ul class="services-list">
         <li>
-          <a href="#" class="card">
+          <article href="#" class="card">
             <div class="card-content">
               <div class="icon ui-icon">
                 <svg
@@ -140,10 +172,10 @@
               </p>
               <a href="#" class="button">Get started</a>
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="card">
+          <article href="#" class="card">
             <div class="card-content">
               <div class="icon front-icon">
                 <svg
@@ -166,12 +198,12 @@
               </p>
               <a href="#" class="button">Get started</a>
             </div>
-          </a>
+          </article>
         </li>
         <li>
-          <a href="#" class="card">
+          <article href="#" class="card">
             <div class="card-content">
-              <div class="icon ui-icon">
+              <div class="icon back-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24px"
@@ -192,11 +224,11 @@
               </p>
               <a href="#" class="button">Get started</a>
             </div>
-          </a>
+          </article>
         </li>
       </ul>
     </section>
-    <section class="portfolio">
+    <section class="portfolio container">
       <h2>Good design means good business</h2>
       <div class="gallery">
         <div class="product-card smarthome">
@@ -207,21 +239,21 @@
           </div>
         </div>
         <div class="product-card onboard">
-          <img src="/img/onboard.png" alt="Smart home dashboard picture" />
+          <img src="/img/onboard.png" alt="Onboard app picture" />
           <div class="product-info">
             <p>UX/UI design</p>
             <a href="#"><h4>Onboard application</h4></a>
           </div>
         </div>
         <div class="product-card booking">
-          <img src="/img/booking.png" alt="Smart home dashboard picture" />
+          <img src="/img/booking.png" alt="Booking app picture" />
           <div class="product-info">
             <p>Full stack application</p>
             <a href="#"><h4>Smart home dashboard</h4></a>
           </div>
         </div>
         <div class="product-card juice">
-          <img src="/img/smarthome.jpg" alt="Smart home dashboard picture" />
+          <img src="/img/juice-product.png" alt="Juice product picture" />
           <div class="product-info">
             <p>Full stack application</p>
             <a href="#"><h4>Smart home dashboard</h4></a>
@@ -230,7 +262,7 @@
         <a href="" class="see-more">see more →</a>
       </div>
     </section>
-    <section class="team">
+    <section class="team container">
       <header class="team-header">
         <h4>Meet the team</h4>
         <h2>We are chilled and a laidback team</h2>
@@ -242,7 +274,7 @@
         <img class="joe" src="/img/person1.png" alt="Joe's picture" />
       </div>
     </section>
-    <div class="testimonials">
+    <div class="testimonials container">
       <div class="single-testimonial">
         <blockquote>
           <p>
@@ -260,7 +292,7 @@
       </div>
     </div>
     <footer>
-      <div class="footer-links">
+      <div class="footer-links container">
         <nav class="footer-nav">
           <ul class="footer-nav-list">
             <li><a class="footer-nav-item" href="#">Home</a></li>
@@ -343,22 +375,40 @@
               </a>
             </li>
           </ul>
-          <div class="footer-form form">
-            <label for="subscribe" style="display: block"
-              >Want us to contact you?</label
-            >
-            <input
-              type="subscribe"
-              name="subscribe"
-              id="subscribe_1"
-              class="subscribe-form"
-            />
-            <button type="submit">
-              <span class="visuallyhidden">Please</span>Join
-            </button>
-          </div>
+        </div>
+        <div class="footer-form form">
+          <label for="subscribe" style="display: block"
+            >Want us to contact you?</label
+          >
+          <input
+            type="subscribe"
+            name="subscribe"
+            id="subscribe_1"
+            class="subscribe-form"
+          />
+          <button type="submit">
+            <span class="visuallyhidden">Please</span>Join
+          </button>
         </div>
       </div>
+      <div class="attribution">
+        <p>
+          Created by <a href="#">rafacalvo</a> -
+          <a href="#">devChallenges.io</a>
+        </p>
+      </div>
     </footer>
+
+    <!-- <script src="main.js"></script> -->
+    <script>
+      // Functions to open and close the sidenav go here:
+      function openNav() {
+        document.getElementById('sidenav').style.left = '150em';
+      }
+
+      function closeNav() {
+        document.getElementById('sidenav').style.left = '-100%';
+      }
+    </script>
   </body>
 </html>
